@@ -11,39 +11,49 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen relative">
+<body class="bg-gray-100 flex flex-col min-h-screen relative">
 
-    <!-- GitHub Widget -->
-    <div class="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-lg w-64 animate__animated animate__fadeInLeft">
-        <h2 class="text-xl font-bold mb-2">Round 2</h2>
-        <a href="https://github.com/your-github-profile" target="_blank" class="flex items-center space-x-2 text-blue-600 hover:text-blue-800">
-            <i class="fab fa-github text-2xl"></i>
-            <span class="text-lg">Click Here !</span>
-        </a>
-    </div>
-
-    <!-- Main Quiz Container -->
-    <div class="w-full max-w-xl bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Round 1</h1>
-        <div id="question-container" class="mb-4">
-            <p id="question-number" class="text-lg font-semibold mb-2"></p>
-            <p id="question" class="text-lg font-semibold"></p>
-        </div>
-        <div class="mb-4">
-            <input type="text" id="answer-input" class="w-full p-2 border border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your answer here">
-        </div>
-        <button id="submit-button" class="w-full bg-blue-500 text-white p-2 rounded-lg mb-4 hover:bg-blue-600">Submit Answer</button>
-        <div id="keyword-container" class="mt-4 text-center hidden animate__animated">
-            <p class="text-lg font-bold">Keyword:</p>
-            <div class="flex justify-center items-center space-x-4">
-                <p id="keyword" class="text-2xl font-semibold text-green-500"></p>
-                <button id="copy-button" class="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600">Copy</button>
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-lg font-bold"><a href="index.html">Hack The Box</a></div>
+            <div class="flex space-x-4">
+                <a href="tool.html" class="px-4 py-2 hover:bg-blue-700 rounded transition duration-200">Tool</a>
+                <a href="https://www.ordudion.tech/about" class="px-4 py-2 hover:bg-blue-700 rounded transition duration-200">About</a>
             </div>
         </div>
-        <div class="mt-4 flex flex-wrap justify-center" id="navigation-buttons">
-            <!-- Navigation buttons will be dynamically inserted here -->
+    </nav>
+
+    <!-- Main Quiz Container -->
+    <div class="flex-grow flex items-center justify-center p-6">
+        <div class="w-full max-w-xl bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Round 1</h1>
+            <div id="question-container" class="mb-4">
+                <p id="question-number" class="text-lg font-semibold mb-2"></p>
+                <p id="question" class="text-lg font-semibold"></p>
+            </div>
+            <div class="mb-4">
+                <input type="text" id="answer-input" class="w-full p-2 border border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your answer here">
+            </div>
+            <button id="submit-button" class="w-full bg-blue-500 text-white p-2 rounded-lg mb-4 hover:bg-blue-600">Submit Answer</button>
+            <div id="keyword-container" class="mt-4 text-center hidden animate__animated">
+                <p class="text-lg font-bold">Keyword:</p>
+                <div class="flex justify-center items-center space-x-4">
+                    <p id="keyword" class="text-2xl font-semibold text-green-500"></p>
+                    <button id="copy-button" class="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600">Copy</button>
+                </div>
+            </div>
+            <div class="mt-4 flex flex-wrap justify-center" id="navigation-buttons">
+                <!-- Navigation buttons will be dynamically inserted here -->
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 w-full text-center mt-auto">
+        All rights reserved to <a href="https://www.tinobritty.tech" target="_blank" rel="noopener noreferrer">Tino Britty</a>
+    </footer>
+
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="brittytino" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     <script src="main.js"></script>
 </body>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AES Encryption/Decryption</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-lg font-bold"><a href="index.html">Hack The Box</a></div>
+      <div>
+        <a href="index.html" class="px-4 py-2 hover:bg-blue-700 rounded transition duration-200">Quiz</a>
+        <a href="https://www.ordudion.tech/about" class="px-4 py-2 hover:bg-blue-700 rounded transition duration-200">About</a>
+    </div>
+    </div>
+  </nav>
+
+
+  <!-- Main Container -->
+  <div class="flex-grow flex items-center justify-center p-6">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+      <h1 class="text-3xl font-bold text-center mb-6">AES Encryption/Decryption</h1>
+      
+      <!-- Text Area for Input -->
+      <div class="mb-4">
+        <label class="block text-gray-700 mb-2">Text:</label>
+        <textarea id="text" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3"></textarea>
+      </div>
+      
+      <!-- Secret Key Input -->
+      <div class="mb-4">
+        <label class="block text-gray-700 mb-2">Secret Key:</label>
+        <input type="password" id="secretKey" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="flex space-x-4 justify-center mb-4">
+        <button onclick="encryptText()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">Encrypt</button>
+        <button onclick="decryptText()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-200">Decrypt</button>
+      </div>
+      
+      <!-- Result Area -->
+      <div class="mb-4">
+        <label class="block text-gray-700 mb-2">Result:</label>
+        <textarea id="result" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" readonly></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 w-full text-center mt-auto">
+    All rights reserved to <a href="https://www.tinobritty.tech" target="_blank" rel="noopener noreferrer">Tino Britty</a>
+</footer>
+
+
+  <!-- JavaScript for Encryption/Decryption -->
+  <script>
+    function encryptText() {
+      const text = document.getElementById('text').value;
+      const secretKey = document.getElementById('secretKey').value;
+      if (text && secretKey) {
+        const encrypted = CryptoJS.AES.encrypt(text, secretKey).toString();
+        document.getElementById('result').value = encrypted;
+      } else {
+        alert('Please enter both text and secret key.');
+      }
+    }
+
+    function decryptText() {
+      const encryptedText = document.getElementById('text').value;
+      const secretKey = document.getElementById('secretKey').value;
+      if (encryptedText && secretKey) {
+        try {
+          const decrypted = CryptoJS.AES.decrypt(encryptedText, secretKey);
+          const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+          document.getElementById('result').value = decryptedText;
+        } catch (e) {
+          alert('Decryption failed. Please check your secret key and encrypted text.');
+        }
+      } else {
+        alert('Please enter both encrypted text and secret key.');
+      }
+    }
+  </script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="brittytino" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+
+</body>
+</html>
