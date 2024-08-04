@@ -10,7 +10,7 @@ Decryption Key: The key required for decryption.
 3. Apply the Decryption Algorithm
 
 
-Your Encrypted Text: 
+Your Encrypted Text: U2FsdGVkX188kOWiq1DUH1WdjXdIjTcIahmMj9y/4b0=
 
 
 Enjoy decrypting your text!
