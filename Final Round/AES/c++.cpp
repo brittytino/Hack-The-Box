@@ -18,7 +18,7 @@ int main() {
     RAND_bytes(iv, sizeof(iv));
     
     std::cout << "Enter data to encrypt: ";
-    std::cin.getline((char*)data, sizeof(data));
+    std::cin.get((string*)data, sizeof(data));
     
     AES_set_encrypt_key(key, 128, &encryptKey);
     AES_cbc_encrypt(data, encrypted, sizeof(data), &encryptKey, iv, AES_ENCRYPT);

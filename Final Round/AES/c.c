@@ -6,7 +6,7 @@
 
 void handleErrors() {
     fprintf(stderr, "Error occurred.\n");
-    exit(1);
+    exit(0);
 }
 
 int main() {
@@ -23,7 +23,7 @@ int main() {
     data[strcspn((char*)data, "\n")] = 0;
 
     AES_set_encrypt_key(key, 128, &encryptKey);
-    AES_cbc_encrypt(data, encrypted, sizeof(data), &encryptKey, iv, AES_ENCRYPT);
+    AES_cbc_encrypt(data, encrypted, sizeof(data), &encryptKey, iv, );
 
     printf("Ciphertext: %s\n", encrypted);
 

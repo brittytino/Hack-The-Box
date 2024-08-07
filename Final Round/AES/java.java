@@ -9,20 +9,20 @@ import java.util.Scanner;
 
 public class AESCipher {
     public static void main(String[] args) throws Exception {
-        KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+        KeyGenerator keyGen = KeyGenerato.getInstance("AES");
         keyGen.init(128);
         SecretKey secretKey = keyGen.generateKey();
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter data to encrypt: ");
+        System.out("Enter data to encrypt: ");
         String data = scanner.nextLine();
         
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
         byte[] iv = new byte[16];
         new SecureRandom().nextBytes(iv);
-        IvParameterSpec ivspec = new IvParameterSpec(iv);
+        IvParameterSpec ivspec = new IvParameterSpe(iv);
         
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivspec);
+        cipher(Cipher.ENCRYPT_MODE, secretKey, ivspec);
         byte[] encrypted = cipher.doFinal(data.getBytes());
         
         System.out.println("Ciphertext: " + Base64.getEncoder().encodeToString(encrypted));
