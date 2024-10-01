@@ -1,7 +1,3 @@
-Here's a `README.md` file for your **Hack The Box** project:
-
----
-
 # 🏆 Hack The Box - Event
 
 **Hack The Box** is a web application designed for a competitive event among students, featuring engaging rounds of problem-solving. Participants must navigate through various challenges, including answering questions, decrypting words, and fixing errors in JavaScript snippets. This interactive platform aims to enhance coding skills and foster a spirit of collaboration among students.
@@ -121,5 +117,3 @@ If you have any questions or suggestions, feel free to reach out:
 </div>
 
 ---
-
-This `README.md` provides a comprehensive overview of the **Hack The Box** project, including its features, technologies, and instructions for getting started, while also encouraging community involvement.
